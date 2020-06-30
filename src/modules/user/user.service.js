@@ -8,12 +8,14 @@ class UserService {
     this.#userRepository = userRepository;
   }
 
-  getUsers () {
-    return this.#userRepository.findAll();
+  async getUsers () {
+    const users = await this.#userRepository.findAll();
+    return users.map(user => user.getProperties());
   }
 
-  getUser (idx) {
-    return this.#userRepository.findByIdx(idx);
+  async getUser (idx) {
+    const user = await this.#userRepository.findByIdx(idx);
+    return user.getProperties();
   }
 
   addUser (userInfo) {

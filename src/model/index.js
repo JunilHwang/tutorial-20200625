@@ -3,7 +3,8 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'junil',
-  database: 'junil321#@!'
+  password: 'junil321#@!',
+  database: '20200630'
 });
 
 const promisePool = () => connection.promise();
