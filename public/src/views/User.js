@@ -2,8 +2,11 @@ export default {
   template: `
     <section>
       <h2>{{ user.name }}</h2>
-      <p> {{ user.email }} </p>
-      <p> {{ user.age }} </p>
+      <ul>
+        <li>이메일: {{ user.email }}</li>
+        <li>나이: {{ user.age }}</li>
+      </ul>
+      <router-link to="/">목록으로</router-link>
     </section>
   `,
   data () {

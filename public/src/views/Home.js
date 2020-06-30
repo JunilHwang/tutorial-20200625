@@ -6,7 +6,7 @@ export default {
               <li v-html="user.name" />
               <li v-html="user.email" />
               <li v-html="user.age" />
-              <li><router-link :to="'/user/' + index">조회</router-link></li>
+              <li><router-link :to="'/user/' + user.idx">조회</router-link></li>
             </ul>
             <ul>
               <li>유저 정보 추가</li>
