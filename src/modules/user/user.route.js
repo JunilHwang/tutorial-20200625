@@ -7,15 +7,14 @@ router.get('/api/users', async (request, response) => {
   response.json(users);
 });
 
-router.get('/api/user/:index', (request, response) => {
-  response.json(model.users[request.params.index]);
+router.get('/api/user/:idx', async ({ params: { idx } }, response) => {
+  const user = await userService.getUser(idx);
+  response.json(user);
 });
 
-router.post('/api/user', (request, response) => {
-  model.users.push(request.body)
-  response.send({
-    success: true,
-  })
+router.post('/api/user', async ({ body: userValueObject }, response) => {
+  await userService.addUser(userValueObject);
+  response.status(204).send();
 });
 
 module.exports = router;

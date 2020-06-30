@@ -22,14 +22,15 @@ class UserRepository {
   }
 
   async save (user) {
-    const { idx, name, email } = user.getProperties();
+    const params = user.getProperties();
     try {
-      if (idx === null) {
-        const [results] = await query('INSERT INTO `user` SET ?', {name, email});
-        return User.of({name, email, idx: results.insertId});
+      if (params.idx === null) {
+        const { idx, ...userInfo } = params;
+        const [ results ] = await query('INSERT INTO `user` SET ?', userInfo);
+        return User.of({ ...params, idx: results.insertId });
       } else {
-        await query('UPDATE `user` SET `name` = ?, `email` = ? where idx = ?', [name, email, idx]);
-        return User.of({name, email, idx});
+        await query('UPDATE `user` SET `name` = :name, `email` = :email, `age` = :age where idx = :idx', params);
+        return user;
       }
     } catch (e) {
       return null;

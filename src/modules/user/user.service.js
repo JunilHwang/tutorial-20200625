@@ -16,7 +16,8 @@ class UserService {
     return this.#userRepository.findByIdx(idx);
   }
 
-  saveUser (user) {
+  addUser (userValueObject) {
+    const user = User.init(userValueObject);
     return this.#userRepository.save(user);
   }
 }
