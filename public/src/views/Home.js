@@ -9,8 +9,9 @@ export default {
             </ul>
             <ul>
               <li>유저 정보 추가</li>
-              <li><input type="text" v-model="userInfo.name" size="20" /></li>
-              <li><input type="text" v-model="userInfo.age" size="20" /></li>
+              <li><input type="text" v-model="userInfo.name" size="20" placeholder="이름을 입력해주세요" /></li>
+              <li><input type="text" v-model="userInfo.email" size="20" placeholder="이메일을 입력해주세요" /></li>
+              <li><input type="text" v-model="userInfo.age" size="20" placeholder="나이를 입력해주세요" /></li>
               <li><button type="submit" @click="push">전송</button></li>
             </ul>
           </section>
@@ -19,6 +20,7 @@ export default {
     return {
       userInfo: {
         name: '',
+        email: '',
         age: '',
       },
       users: []

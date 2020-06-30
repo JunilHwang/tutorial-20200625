@@ -146,7 +146,7 @@ import express from 'express';
 import userRoute from './src/modules/user/user.route';
 ```
 
-브라우저에서 esm을 사용할 경우 다음과 같이 ``type="module"`을 명시해야됨
+브라우저에서 esm을 사용할 경우 다음과 같이 `type="module"`을 명시해야됨
 
 - 예시: [index.html](./public/index.html)
 
