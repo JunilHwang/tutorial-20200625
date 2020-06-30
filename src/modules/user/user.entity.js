@@ -1,12 +1,13 @@
 class User {
 
   // 필드 선언. '#'이 붙은건 private field
-  #idx; #name; #email;
+  #idx; #name; #email; #age;
 
-  constructor({ idx, name, email }) {
+  constructor({ idx, name, email, age }) {
     this.#idx = idx;
     this.#name = name;
     this.#email = email;
+    this.#age = age;
   }
 
   static of (params) {
@@ -21,7 +22,8 @@ class User {
     return {
       idx: this.#idx,
       name: this.#name,
-      email: this.#email
+      email: this.#email,
+      age: this.#age,
     }
   }
 }
