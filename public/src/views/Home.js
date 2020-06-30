@@ -4,6 +4,7 @@ export default {
             <h2>유저 목록</h2>
             <ul v-for="(user, index) in users" :key="index">
               <li v-html="user.name" />
+              <li v-html="user.email" />
               <li v-html="user.age" />
               <li><router-link :to="'/user/' + index">조회</router-link></li>
             </ul>
