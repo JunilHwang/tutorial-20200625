@@ -56,6 +56,8 @@ connection.query(
 
 `nodejs` 환경에서는 `CommonJS`를 사용함
 
+- 예시: [server.js](./server.js)
+
 ```js
 // export01.js에 다음과 같이 정의 되어있다고 가정
 module.a = 10;
@@ -100,6 +102,8 @@ const userRoute = require('./src/modules/user/user.route');
 
 브라우저(크롬) 혹은 webpack을 이용하면 ESModule을 사용할 수 있음.
 
+- 예시: [app.js](./public/src/app.js)
+
 ```js
 // export01.js에 다음과 같이 정의 되어있다고 가정
 export const a = 10;
@@ -143,6 +147,8 @@ import userRoute from './src/modules/user/user.route';
 ```
 
 브라우저에서 esm을 사용할 경우 다음과 같이 ``type="module"`을 명시해야됨
+
+- 예시: [index.html](./public/index.html)
 
 ```html
 <!DOCTYPE html>
