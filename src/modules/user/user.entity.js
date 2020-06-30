@@ -14,8 +14,8 @@ class User {
     return new User(params)
   }
 
-  static init (params) {
-    return User.of({ idx: null, ...params });
+  static init (userInfo) {
+    return User.of({ idx: null, ...userInfo });
   }
 
   getProperties() {

@@ -12,8 +12,8 @@ router.get('/api/user/:idx', async ({ params: { idx } }, response) => {
   response.json(user);
 });
 
-router.post('/api/user', async ({ body: userValueObject }, response) => {
-  await userService.addUser(userValueObject);
+router.post('/api/user', async ({ body: userInfo }, response) => {
+  await userService.addUser(userInfo);
   response.status(204).send();
 });
 
