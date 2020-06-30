@@ -1,4 +1,5 @@
 const userRepository = require('./user.repository');
+const User = require('./user.entity');
 
 class UserService {
 
