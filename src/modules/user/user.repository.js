@@ -1,16 +1,17 @@
 const { query } = require('../../model');
+const User = require('./user.entity');
 
 class UserRepository {
   constructor() { }
 
   async findAll () {
-    const [ rows ] = await query('SELECT * FROM `user`');
-    return rows;
+    const [ users ] = await query('SELECT * FROM `user`');
+    return users.map(user => User.of(user));
   }
 
   async findByIdx (idx) {
     const [ rows ] = await query('SELECT * FROM `user` WHERE idx = ?', [ idx ])
-    return rows.length ? rows[0] : null;
+    return rows.length ? User.of(rows[0]) : null;
   }
 
   async insert (userInfo) {
