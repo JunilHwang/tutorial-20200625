@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const users = require('./src/user/users');
+const users = require('./src/module/user/users');
 
 app.use(express.json()); // request post data 파싱을 위함
 
