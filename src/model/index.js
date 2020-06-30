@@ -9,6 +9,5 @@ const connection = mysql.createConnection({
 const promisePool = () => connection.promise();
 
 const query = sql => promisePool().query(sql);
-const execute = (...params) => promisePool().execute(...params);
 
-module.exports = { connection, query, execute };
+module.exports = { connection, query };
